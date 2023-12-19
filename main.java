@@ -66,8 +66,19 @@ class main{
         printDevider();
         
         print("collections");
+        Set<Integer> set2 = new HashSet<>();
+
+        Collections.addAll(set2, arr);
         Collections.sort(arrList);
-        System.out.println(arrList);
+        print(arrList);
+        Collections.shuffle(arrList);
+        print(arrList);
+        Collections.sort(arrList);
+
+        print(Collections.frequency(arrList, 1));
+        print(arrList);
+
+        print(set2);
         
     }
 
