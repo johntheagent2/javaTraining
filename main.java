@@ -1,7 +1,10 @@
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.*;
 
 class main{
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
 
         Integer[] arr = {1,1,0,2,3,4,5};
 
@@ -77,8 +80,51 @@ class main{
 
         print(Collections.frequency(arrList, 1));
         print(arrList);
-
         print(set2);
+        printDevider();
+
+        print("Vector");
+        Vector vector = new Vector<>();
+        vector.add(1);
+        vector.add(2);
+        vector.add("Hello");
+        vector.add(3);
+
+        print(vector);
+        vector.remove(1);
+        print(vector);
+        printDevider();
+
+        print("Properties");
+        FileReader reader = new FileReader("test.txt");
+
+        Properties properties = new Properties();
+        properties.load(reader);
+
+        Set tempSet = properties.entrySet();  
+
+        Iterator itr = tempSet.iterator();  
+        while(itr.hasNext()){  
+            Map.Entry entry=(Map.Entry)itr.next();  
+            System.out.println(entry.getKey()+" = "+entry.getValue());  
+        }  
+
+        print(properties.getProperty("email"));
+        print(properties.getProperty("password"));
+
+        properties.store(new FileWriter("test.txt"), "test");
+        printDevider();
+
+        print("Resource Bundle");
+        Locale localeEn = new Locale("en");
+        Locale localeVn = new Locale("vn");
+        ResourceBundle labelsUS = ResourceBundle.getBundle("lang/label", localeEn);
+        ResourceBundle labelsVN = ResourceBundle.getBundle("lang/label", localeVn);
+        System.out.println(labelsUS.getString("GREETING"));
+        System.out.println(labelsVN.getString("GREETING"));
+        printDevider();
+
+        print("Calender");
         
     }
 
