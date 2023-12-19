@@ -57,9 +57,17 @@ class main{
         Set<Integer> set = new HashSet<>();
         set.addAll(arrList);
         print(set);
+        printDevider();
 
+        print("date");
         Date date = new Date();
         System.out.println(date.toString());
+        System.out.println(date.getTime());
+        printDevider();
+        
+        print("collections");
+        Collections.sort(arrList);
+        System.out.println(arrList);
         
     }
 
