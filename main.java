@@ -125,6 +125,51 @@ class main{
         printDevider();
 
         print("Calender");
+        Calendar calendar = Calendar.getInstance();
+        System.out.println("Now: " + calendar.getTime());
+        calendar.add(Calendar.DATE, -15);
+        System.out.println("15 days: " + calendar.getTime());
+        calendar.add(Calendar.MONTH, 4);
+        System.out.println("4 months: " + calendar.getTime());
+        calendar.add(Calendar.YEAR, 2);
+        System.out.println("2 years: " + calendar.getTime());
+
+        Calendar calendarNOW = Calendar.getInstance();
+        System.out.println("YEAR: " + calendarNOW.get(Calendar.YEAR));
+        System.out.println("MONTH: " + calendarNOW.get(Calendar.MONTH));
+        System.out.println("DAY: " + calendarNOW.get(Calendar.DATE));
+        System.out.println("DAY_OF_WEEK: " + calendarNOW.get(Calendar.DAY_OF_WEEK));
+
+        System.out.println("DATE AND TIME: " + calendarNOW.getTime());
+
+        int maximum = calendarNOW.getMaximum(Calendar.DAY_OF_YEAR);
+        System.out.println(maximum);
+
+        int minimum = calendarNOW.getMinimum(Calendar.DAY_OF_YEAR);
+        System.out.println(minimum);
+        printDevider();
+
+        print("ENUM");
+        print("Status number of " + statusCode.NOT_FOUND + " is " + statusCode.NOT_FOUND.getStatusNumber());
+        print("Status number of " + statusCode.OK + " is " + statusCode.OK.getStatusNumber());
+        printDevider();
+
+        print("Iterator");
+        ArrayList<Integer> numbers = new ArrayList<Integer>();
+        numbers.add(12);
+        numbers.add(8);
+        numbers.add(2);
+        numbers.add(23);
+    
+        Iterator<Integer> iter = numbers.iterator();
+
+        while(iter.hasNext()){
+            Integer current = iter.next();
+            if(current == 2){
+                iter.remove();
+            }
+        }
+        print(numbers);
         
     }
 
